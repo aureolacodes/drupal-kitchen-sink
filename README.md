@@ -1,0 +1,12 @@
+# Kitchen Sink
+
+Displays a kitchen sink with multiple template files.
+
+Uses template files located in the currently active template's folder to
+display a kitchen sink. Kitchen sink templates are primarily used to develop
+the styling of the currently active theme.
+
+Template files must be placed in a folder 'kitchen-sink' inside the root of
+the template folder. Template files can be html or php files.
+
+Initial development sponsored by [labor b medienagentur](https://www.laborb.de).

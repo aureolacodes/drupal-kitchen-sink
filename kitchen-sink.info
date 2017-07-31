@@ -1,0 +1,4 @@
+name = Kitchen Sink
+description = Displays a kitchen sink with multiple template files.
+package = Development
+core = 7.x

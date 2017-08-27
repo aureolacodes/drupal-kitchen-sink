@@ -1,0 +1,9 @@
+kitchen_sink.page:
+  path: '/kitchen-sink/{name}'
+  defaults:
+    _controller: '\Drupal\kitchen_sink\Controller\KitchenSinkController::page'
+    _title: 'Kitchen Sink'
+    name: 'default'
+  requirements:
+    _permission: 'administer themes'
+    name: '^[a-zA-Z0-9_]+'

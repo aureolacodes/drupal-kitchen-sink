@@ -13,36 +13,6 @@
  */
 
 /**
- * Implements hook_menu().
- */
-function kitchen_sink_menu() {
-  $items = [];
-
-  $items['kitchen-sink'] = [
-    'title' => 'Kitchen Sink',
-    'description' => 'Displays a html file defined by the given name.',
-    'page callback' => 'kitchen_sink_display_template',
-    'page arguments' => ['default'],
-    'access arguments' => ['administer themes'],
-    'type' => MENU_CALLBACK,
-  ];
-
-  $items['kitchen_sink/%'] = $items['kitchen_sink'];
-  $items['kitchen_sink/%']['page arguments'] = [1];
-
-  return $items;
-}
-
-/**
- * Implements hook_preprocess_page().
- */
-function kitchen_sink_preprocess_page(&$vars) {
-  if (arg(0) == 'kitchen_sink') {
-    $vars['theme_hook_suggestions'][] = 'page__kitchen_sink';
-  }
-}
-
-/**
  * Displays a html file defined by the given name.
  *
  * @param string $name_raw
@@ -110,7 +80,9 @@ function kitchen_sink_get_template($name = 'default') {
  *   Path to the template file.
  */
 function kitchen_sink_get_template_path($name = 'default', $extension = 'html') {
-  $templates_path = path_to_theme() . DIRECTORY_SEPARATOR;
+  $theme = \Drupal::service('theme.manager')->getActiveTheme();
+  
+  $templates_path = $theme->getPath() . DIRECTORY_SEPARATOR;
   $templates_path .= 'kitchen-sink' . DIRECTORY_SEPARATOR;
   $templates_path .= $name . '.' . $extension;
 

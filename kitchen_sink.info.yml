@@ -1,0 +1,5 @@
+name: Kitchen Sink
+description: Displays a kitchen sink with multiple template files.
+package: Development
+type: module
+core: 8.x

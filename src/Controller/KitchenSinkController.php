@@ -47,7 +47,7 @@ class KitchenSinkController extends ControllerBase {
    * @return string
    *   Template file path.
    */
-  function getTemplate($name = 'default') {
+  private function getTemplate($name = 'default') {
     $template_path = $this->getTemplatePath($name, 'php');
     if (file_exists($template_path)) {
       return $template_path;

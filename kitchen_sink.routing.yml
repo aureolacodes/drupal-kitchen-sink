@@ -5,5 +5,5 @@ kitchen_sink.page:
     _title: 'Kitchen Sink'
     name: 'default'
   requirements:
-    _permission: 'administer themes'
+    _permission: 'access kitchen sink'
     name: '^[a-zA-Z0-9-_]+'

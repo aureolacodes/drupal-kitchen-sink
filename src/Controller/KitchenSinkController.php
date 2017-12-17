@@ -16,7 +16,7 @@ class KitchenSinkController extends ControllerBase {
    *   Renderable array.
    */
   public function page($name = 'default') {
-    $name = preg_replace('[^a-z0-9-]', '', (string) $name);
+    $name = preg_replace('/[^a-zA-Z0-9-_]+/', '', $name);
   
     $template = $this->getTemplate($name);
     if (file_exists($template)) {

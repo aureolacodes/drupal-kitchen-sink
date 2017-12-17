@@ -34,7 +34,7 @@ class KitchenSinkController extends ControllerBase {
     }
     
     return array(
-      '#markup' => $markup,
+      '#children' => $markup,
     );
   }
   

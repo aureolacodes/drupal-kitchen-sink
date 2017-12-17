@@ -23,7 +23,7 @@ function kitchen_sink_menu() {
     'description' => 'Displays a html file defined by the given name.',
     'page callback' => 'kitchen_sink_display_template',
     'page arguments' => ['default'],
-    'access arguments' => ['administer themes'],
+    'access arguments' => ['access kitchen sink'],
     'type' => MENU_CALLBACK,
   ];
 
@@ -31,6 +31,18 @@ function kitchen_sink_menu() {
   $items['kitchen_sink/%']['page arguments'] = [1];
 
   return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function kitchen_sink_permission() {
+  return [
+    'access kitchen sink' => [
+      'title' => t('Access kitchen sink'),
+      'description' => t('Allow users to access kitchen sink templates.'),
+    ],
+  ];
 }
 
 /**
